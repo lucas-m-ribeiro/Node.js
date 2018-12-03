@@ -8,6 +8,7 @@ simulando uma requisição ao banco de dados e sincronizando funções com promi
 
 //quand der problema chama o reject e passa o erro (ERROR)
 //quando for sucesso chama o resolve
+
 function obterUsuario() {
     return new Promise(function resolvePromise(resolve, reject){
         setTimeout(function () {
@@ -49,6 +50,7 @@ function obterEndereco(idUsuario) {
 //para manipular erros usamos a função .catch
 
 //retorna usuario
+
 const usuarioPromise = obterUsuario();
 
 usuarioPromise.then(function(resultado){
@@ -58,11 +60,12 @@ usuarioPromise.then(function(resultado){
     console.error("deu ruim saporra", erro);
 });
 
+
 //retorna telefone
 const telefonePromise = obterTelefone();
 
 telefonePromise.then(function(resultado){
-    console.log('resultado', resultado);
+    console.log('contato', resultado);
 })
 .catch(function(erro){
     console.error("deu ruim saporra no telefone", erro);
