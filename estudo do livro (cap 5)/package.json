@@ -1,0 +1,20 @@
+{
+  "name": "capitulo5",
+  "version": "1.0.0",
+  "description": "exemplo do capitulo 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "nodemon": "node app.js"
+  },
+  "keywords": [
+    "livro",
+    "node"
+  ],
+  "author": "lucas ribeiro",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
+}
