@@ -22,6 +22,9 @@ function callback(request, response){
         //escreve json na resposta (response) da requisicao http
         response.end(json);
     }
+    else{
+        response.end("rota invalida " + path)
+    }
 
 }
 
