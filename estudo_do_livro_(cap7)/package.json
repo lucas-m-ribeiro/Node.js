@@ -1,0 +1,14 @@
+{
+  "name": "estudo_do_livro_cap7",
+  "version": "1.0.0",
+  "description": "capitulo 7 mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "author": "lucas ribeiro",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
+}
