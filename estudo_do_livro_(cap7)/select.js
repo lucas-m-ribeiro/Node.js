@@ -4,10 +4,11 @@ var mysql = require('mysql');
 // Cria a conexão com MySQL
 var connection = mysql.createConnection({
 	host: 'localhost',
-	user: 'root',
-	password: '',
+	user: 'livro',
+	password: 'livro123',
 	database: 'livro'
 });
+
 // Conecta no banco de dados	
 connection.connect();
 
