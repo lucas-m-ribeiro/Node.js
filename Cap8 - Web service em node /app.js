@@ -1,55 +1,87 @@
-//carregando modulos 
-const http = require('http');
-const url = require('url');
+// Carrega os módulos
+var http = require('http');
+var url = require('url');
 
-//importando a classe carrpbd
-const carrobd = require('./carrobd');
+// Importa a classe CarroDB
+const CarroDB = require('./CarroDB');
 
-//consulta carro pelo tipo e retorna JSON como reposta
-function getCarros(response, tipo){
+// Consulta os carros pelo tipo e retorna o JSON na resposta.
+function getCarros(response,tipo) {
     
-    //buscando carros no banco 
-    carrobd.getCarrosByTipo(tipo, function(carros){
+    // Busca os carros no banco.
+	CarroDB.getCarrosByTipo(tipo, function(carros) {
+		// Converte o array de carros para JSON
+		var json = JSON.stringify(carros)
+		// Envia o JSON como resposta
+	    	response.end(json)
+	});
+}
+
+
+// Salva um carro
+function salvarCarro(response,carro) {
+    
+	CarroDB.save(carro, function(carro) {
+		console.log("Carro salvo com sucesso: " + carro.id)
         
-        //converte o array de carros em JSON
-        var json = JSON.stringify(carros);
-        response.end(json);
-    });
-
+        // Converte o carro salvo para JSON
+		var json = JSON.stringify(carro)
+        
+        // Envia o JSON como resposta
+		response.end(json)
+	});
 }
 
-//funcao de callback para o servidor
-function callback(request, response){
+
+// Função de callback para o servidor HTTP
+function callback(request, response) {
+
+	// Faz o parser da URL separando o caminho (path)
+	var parts = url.parse(request.url);
+	var path = parts.path;
     
-    //faz o parse da url separando o caminho (path)
-    var parts = url.parse(request.url);
-    var path = parts.path;
-
-    //configura o tipo de retorno para aplication/json
-    response.writeHead(200, {
-        "Content-type": "application/json; charset=utf-8"
-    });
-
-    //verifica o path
-    if(path == '/carros/classicos'){
-        getCarros(response, "Classicos");
-    }
-    else if(path == '/carros/esportivos'){
-        getCarros(response, "esportivos");
-    }
-    else if(path == '/carros/luxo'){
-        getCarros(response, "luxo");
-    }
-    else{
-        response.end('nenhum carro encontrado' + path);
-    }
+    // Configura o tipo de retorno para application/json
+	response.writeHead(200, {"Content-Type": "application/json; charset=utf-8"});
+    
+    if(request.method == "GET") {
+		// GET
+		// Verifica o path
+		if (path == '/carros/classicos') {
+			getCarros(response, "classicos")
+		} else if (path == '/carros/esportivos') {
+			getCarros(response,"esportivos")
+		} else if (path == '/carros/luxo') {
+			getCarros(response,"luxo")
+		} else {
+			response.end("Not found: " + path);
+		}
+	} else if(request.method == "POST") {
+        // POST
+		// Faz leitura dos dados recebidos por POST
+		var body = '';
+		request.on('data', function (data) {
+            
+            // Concatena os dados recebidos na variável body
+			body += data;
+        });
+        
+		request.on('end', function () {
+        
+            // Imprime o corpo (body) da requisição
+			console.log(">> " + body);
+			let carro = JSON.parse(body);
+			console.log(carro)
+			salvarCarro(response, carro);
+        });
+		return
+	}
 }
 
-//servidor
-const server = http.createServer(callback);
+// Cria um servidor HTTP que vai responder "Hello World" para todas requisições.
+var server = http.createServer(callback);
 
-//porta que o servidor vai escutar
+// Porta que o servidor vai escutar
 server.listen(3000);
 
-//mensagem ao iniciar o servidor
-console.log('servidor iniciado em http://localhost:3000/');
+// Mensagem ao iniciar o servidor
+console.log("Servidor iniciado em http://localhost:3000/");
