@@ -85,4 +85,4 @@ Os codigos salvos neste repositorio sao referentes ao exercicios dos capitulos d
     <li>Determinando o tipo de conteudo que o web service aceita;</li>
  </ul>
 
-<p>A partir do capitulo 9, começou-se a desenvolver um projeto completo ate o final do livro. Este projeto esta armazenado em um repositorio a parte de nome APIRest, os codigos contidos neste repositorio, são codigos de exercicios desenvolvidos nestes capitulos de acordo com o sumario de cada capitulo acima.</p>
+<p>A partir do capitulo 10, começou-se a desenvolver um projeto completo ate o final do livro. Este projeto esta armazenado em um repositorio a parte de nome APIRest, os codigos contidos neste repositorio, são codigos de exercicios desenvolvidos nestes capitulos de acordo com o sumario de cada capitulo acima.</p>
