@@ -3,6 +3,11 @@
 <p>Estudo realizado com o livro Node Essencial do autor Ricardo R Lecheta
 
 Os codigos salvos neste repositorio sao referentes ao exercicios dos capitulos do livro.
+
+<h3>Obs:</h3>
+<p>Para a criação do banco de dados, há no repositorio dois arquivos .sql para se criar o banco. O aquivo <b>CreateTable.sql</b>, permite que crie a tabela de carros no BD com todos os pre-requisitos nescessarios. O arquivo </b>InsertCarros.sql</b>, permite que insira todos os carros na tabela com os atributos nescessarios. </p>
+
+
 </p>
 
 <h3>Capitulo 4 - Node Basico</h3>
