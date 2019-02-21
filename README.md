@@ -2,10 +2,30 @@
 
 <p>Estudo realizado com o livro Node Essencial do autor Ricardo R Lecheta
 
-Os codigos salvos neste repositorio sao referentes ao exercicios dos capitulos do livro.
+Os códigos salvos neste repositório sao referentes aos exercícios dos capítulos do livro.
 
 <h3>Obs:</h3>
-<p>Para a criação do banco de dados, há no repositorio dois arquivos .sql para se criar o banco. O aquivo <b>CreateTable.sql</b>, permite que crie a tabela de carros no BD com todos os pre-requisitos nescessarios. O arquivo </b>InsertCarros.sql</b>, permite que insira todos os carros na tabela com os atributos nescessarios. </p>
+<p>Para a criação do banco de dados, há no repositório dois arquivos .sql para se criar o banco. O aquivo <b>CreateTable.sql</b>, permite que crie a tabela de carros no BD com todos os pre-requisitos nescessarios. O arquivo </b>InsertCarros.sql</b>, permite que insira todos os carros na tabela com os atributos nescessarios. </p>
+
+<h3>Apresentação da Tecnologia utilizada</h3>
+
+<h3>Node.js</h3>
+
+<p>Node.js é um interpretador de código JavaScript com o código aberto, focado em migrar o Javascript do lado do cliente para servidores. Seu objetivo é ajudar programadores na criação de aplicações de alta escalabilidade (como um servidor web), com códigos capazes de manipular dezenas de milhares de conexões simultâneas, numa única máquina física.
+
+<h5>Instalação do node.js e NPM</h5>
+
+Primeiramente, para criar um projeto node, devemos instalar o Node.js. Para instalação no sistema Operacional Windows e Mac basta acessar o site https://nodejs.org/en/download/ e instalar conforme a arquitetura do seu sistema operacional. Caso voce esteja usando linux(Debian, Ubuntu e derivados), basta abrir o terminal e instalar diretamente do repositorio da sua distribuição com o comando <b>"sudo apt-get install nodejs"</b>, e logo em seguida basta instalar o gerenciador de pacotes do node chamado NPM(node package manager), <b>"sudo apt-get install npm"</b>
+
+<h5>Inicialização do projeto node</h5>
+
+Depois de instalado, para começar um projeto node, basta acessar o diretório do seu projeto no terminal (cmd no windows) e digitar o comando <b>"npm init"</b>, assim com este comando ele irá gerar um arquivo chamado <b>"package.json"</b>, este arquivo que define seu projeto node, e guarda informações como os modulos utilizados e o arquivo de inicialização do projeto.
+
+<h5>Instalação de módulos</h5>
+
+Para fazer a instalação de módulos no projeto, como po exemplo o conector de banco de dados mysql, o framework Express entre outros, basta voce abrir o terminal (cmd no windows) e digitar o comando<b>"npm install 'nome do modulo' --save"</b> dentro do diretóro de seu projeto. O parametro "--save", fara com que o modulo seja salvo apenas no seu projeto atual, colocando assim o modulo na tag de dependências do seu arquivo package.json. Para remover um módulo basta digitar o comando <b>"npm remove 'nome do modulo'" </b>, que ele será removido do seu projeto.
+</p>
+
 
 
 </p>
