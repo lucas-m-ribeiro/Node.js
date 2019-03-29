@@ -98,6 +98,11 @@ Depois de instalado, para começar um projeto node, basta acessar o diretório d
 Para fazer a instalação de módulos no projeto, como po exemplo o conector de banco de dados mysql, o framework Express entre outros, basta voce abrir o terminal (cmd no windows) e digitar o comando **"npm install <'nome do modulo'> --save"** dentro do diretóro de seu projeto. O parametro **"--save"**, fara com que o modulo seja salvo apenas no seu projeto atual, colocando assim o modulo na tag de dependências do seu arquivo package.json. Para remover um módulo basta digitar o comando **"npm remove <'nome do modulo'> --save"**, que ele será removido do seu projeto, e do seu package.json.
 </p>
 
+<h3>Executando a aplicação</h3>
+
+Para executar uma aplicação, basta digitar o comando **node <'nome do arquivo'>** que a sua aplicação sera executada. Porem se sua aplicação tiver uma configuração para levantar um servidor, voce podera executar como **npm start** ou utilizando o comando **nodemon**, que assim sua aplicação sera executada levantando o arquivo do servidor mapeado no seu package.json. A diferença dos dois comandos, é que executando a aplicação com **nodemon**, voce não precisara executar novamente o projeto se fizer alguma ateração no seu codigo backend, ja com o comando **npm start** você tera de reniciar toda vez que fizer alguma mudança. Você tambem pode instalar o modulo do nodemon no seu projeto digitando o comando **npm install nodemon -- save**. 
+
+
 </p>
 
 <h3>Capitulo 4 - Node Basico</h3>
@@ -128,7 +133,7 @@ Neste capitulo, estudamos um pouco sobre o NPM (Node package manager), o gerenci
 
 <h3>Capitulo 6 - JSON Basico</h3>
 
-Neste capitulo estudamos um pouco sobre JSON (JavaScript Object Nitation), Json é um formato compacto, de padrão aberto independente, de troca de dados simples e rápida entre sistemas, especificado por Douglas Crockford em 2000:
+Neste capitulo estudamos um pouco sobre JSON (JavaScript Object Notation), Json é um formato compacto, de padrão aberto independente, de troca de dados simples e rápida entre sistemas, especificado por Douglas Crockford em 2000:
 
  >JSON basico;
  
